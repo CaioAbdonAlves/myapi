@@ -17,4 +17,8 @@ rolesRouter.get('/:id', (request, response) => {
   return showRolesController.handle(request, response)
 })
 
+rolesRouter.put('/:id', (request, response) => {
+  return showRolesController.handle(request, response)
+})
+
 export { rolesRouter }
