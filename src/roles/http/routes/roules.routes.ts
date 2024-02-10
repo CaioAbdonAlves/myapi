@@ -2,6 +2,7 @@ import { createRolesController } from '@roles/useCases/createRole'
 import { deleteRolesController } from '@roles/useCases/deleteRole'
 import { listRolesController } from '@roles/useCases/listRoles'
 import { showRolesController } from '@roles/useCases/showRole'
+import { updateRolesController } from '@roles/useCases/updateRole'
 import { Router } from 'express'
 import { celebrate, Joi, Segments } from 'celebrate'
 
@@ -55,7 +56,7 @@ rolesRouter.put(
     }),
   }),
   (request, response) => {
-    return showRolesController.handle(request, response)
+    return updateRolesController.handle(request, response)
   },
 )
 

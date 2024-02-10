@@ -4,4 +4,4 @@ import { UpdateRoleController } from './UpdateRoleController'
 
 const rolesRepository = RoleRepository.getInstance()
 const updateRoleUseCase = new UpdateRoleUseCase(rolesRepository)
-export const showRolesController = new UpdateRoleController(updateRoleUseCase)
+export const updateRolesController = new UpdateRoleController(updateRoleUseCase)
