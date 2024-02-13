@@ -8,7 +8,7 @@ import {
 import { dataSource } from '@shared/typeorm'
 import { Repository } from 'typeorm'
 
-export class UserRepository implements IUsersRepository {
+export class UsersRepository implements IUsersRepository {
   private repository: Repository<User>
 
   constructor() {
