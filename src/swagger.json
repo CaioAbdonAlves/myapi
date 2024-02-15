@@ -347,6 +347,85 @@
             "description": "Role not found."
           }
         }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "List all users",
+        "description": "Returns all users paginated.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Number of the pages",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "example": "page=1"
+            },
+            "style": "label"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of registers per pages",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "example": "limit=15"
+            },
+            "style": "label"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "example": {
+                  "per_page": 15,
+                  "total": 2,
+                  "current_page": 1,
+                  "data": [
+                    {
+                      "id": "b1753535-0772-4b69-b6cd-e720fda08e85",
+                      "name": "admin",
+                      "email": "a@a.com",
+                      "isAdmin": 1,
+                      "avatar": null,
+                      "created_at": "2024-02-14T05:04:10.000Z",
+                      "role": {
+                        "id": "e636c617-73d7-4b1f-9041-e39a635692c4",
+                        "name": "T.I.",
+                        "created_at": "2024-02-14T05:04:10.000Z"
+                      },
+                      "avatar_url": null
+                    },
+                    {
+                      "id": "c5281fdf-7363-4103-95ad-f7f8b4c27e4b",
+                      "name": "Caio",
+                      "email": "caioa@a.com",
+                      "isAdmin": 1,
+                      "avatar": null,
+                      "created_at": "2024-02-15T04:06:42.000Z",
+                      "role": {
+                        "id": "e636c617-73d7-4b1f-9041-e39a635692c4",
+                        "name": "T.I.",
+                        "created_at": "2024-02-14T05:04:10.000Z"
+                      },
+                      "avatar_url": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request."
+          },
+          "401": {
+            "description": "Invalid authentication token."
+          }
+        }
       }
     }
   }
